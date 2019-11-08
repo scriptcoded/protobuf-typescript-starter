@@ -1,0 +1,13 @@
+{
+  "ignore": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "src/protobuf",
+    "src/generated/protobuf/index.js"
+  ],
+  "watch": [
+    "src"
+  ],
+  "exec": "yarn start:dev",
+  "ext": "ts"
+}

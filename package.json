@@ -1,0 +1,32 @@
+{
+  "name": "protobuf-typescript-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Malcolm Nihlén <malcolm.nihlen@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/main.js",
+    "start:dev": "ts-node src/main.ts",
+    "build": "tsc",
+    "dev": "run-p -l watch:protobuf watch:app",
+    "generate:protobuf": "mkdirp src/generated/protobuf && yarn generate:protobuf:js && yarn generate:protobuf:ts",
+    "generate:protobuf:js": "pbjs -t static-module -w commonjs -o src/generated/protobuf/index.js src/protobuf/*",
+    "generate:protobuf:ts": "pbts -o src/generated/protobuf/index.d.ts src/generated/protobuf/index.js",
+    "watch:protobuf": "nodemon --watch src/protobuf --ignore '' -e proto --exec yarn generate:protobuf",
+    "watch:app": "nodemon"
+  },
+  "dependencies": {
+    "protobufjs": "^6.8.8"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.6",
+    "@types/protobufjs": "^6.0.0",
+    "eslint": "^6.6.0",
+    "mkdirp": "^0.5.1",
+    "nodemon": "^1.19.4",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.7.2"
+  }
+}
