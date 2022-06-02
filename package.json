@@ -16,7 +16,7 @@
     "watch:app": "nodemon"
   },
   "dependencies": {
-    "protobufjs": "^6.8.8"
+    "protobufjs": "^6.11.3"
   },
   "devDependencies": {
     "@types/node": "^12.12.6",
